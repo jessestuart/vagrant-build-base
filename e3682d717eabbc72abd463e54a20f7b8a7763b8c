@@ -1,0 +1,5 @@
+[ver:1,total:600]
+Dockerfile:240,1514394000:180,1514397600:60,m
+.git/rebase-merge/git-rebase-todo:180,1513825200:180,d
+hooks/build:160,1514394000:100,1514397600:60,r
+hooks/env:20,1514394000:20,r
