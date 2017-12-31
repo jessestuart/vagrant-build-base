@@ -8,7 +8,7 @@ ARG VAGRANT_CACHIER_PLUGIN_VERSION=1.2.1
 
 RUN export UNAME_HARDWARE=$(uname -m); export UNAME_OS=$(uname -s);
 
-ENV PACKAGES="ansible git openssh-clients python"
+ENV PACKAGES="python"
 
 ENV DOCKER_COMPOSE_URL="https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-${UNAME_HARDWARE}-${UNAME_OS}"
 ENV DOCKER_URL="https://get.docker.com"
@@ -24,4 +24,7 @@ RUN \
     chmod +x /usr/bin/docker-compose; \
     rm -rf /var/tmp/*; \
     curl https://bootstrap.pypa.io/get-pip.py | python; \
-    pip install awscli;
+    pip install awscli; \
+    yes | pip uninstall pip -q; \
+    rm -rf /var/log /var/cache; \
+    yum clean all;
