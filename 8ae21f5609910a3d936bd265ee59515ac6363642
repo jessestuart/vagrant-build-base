@@ -1,3 +1,10 @@
 [ver:1,total:60]
 .circleci/config.yml:30,1514700000:30,m
 Dockerfile:30,1514700000:30,m
+
+[ver:1,total:120]
+.circleci/config.yml:120,1514700000:120,m
+
+[ver:1,total:420]
+.circleci/config.yml:330,1514700000:330,m
+Dockerfile:90,1514700000:90,m
