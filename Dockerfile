@@ -8,7 +8,7 @@ ARG VAGRANT_CACHIER_PLUGIN_VERSION=1.2.1
 
 RUN export UNAME_HARDWARE=$(uname -m); export UNAME_OS=$(uname -s);
 
-ENV PACKAGES="python"
+ENV PACKAGES="ansible openssh-clients python rsync"
 
 ENV DOCKER_COMPOSE_URL="https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-${UNAME_HARDWARE}-${UNAME_OS}"
 ENV DOCKER_URL="https://get.docker.com"
