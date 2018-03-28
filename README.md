@@ -1,9 +1,11 @@
 ### Vagrant Base Build
 
-This builds a Docker image with Vagrant installed, intended for use primarily
-in CI environments — especially in predominately Docker-based CI's like
-CircleCI, Drone, Concourse, etc. — in order to validate whether a given Vagrant
-build has succeeded.
+Builds a CentOS 7-based (amd64) image with Vagrant preinstalled. Intended for
+use primarily in CI environments — especially Docker-native CI's like CircleCI,
+Drone, Concourse, etc. — in order to validate e.g., whether a given Vagrant
+configuration succeeds in provisioning a Vagrant box.
+
+#### Prior Art
 
 Adapted from [Patrick Double's excellent post][op-post] on the _Object
 Partners_ Blog in August 2017.
