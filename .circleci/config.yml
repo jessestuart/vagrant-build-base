@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: docker:17-git
+      - image: docker:18-git
     environment:
       IMAGE_ID: jessestuart/vagrant-build-base
 
@@ -30,3 +30,19 @@ jobs:
               docker tag  "${IMAGE_ID}" "${IMAGE_ID}:latest"
               docker push               "${IMAGE_ID}:latest"
             fi
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build
+  nightly:
+    jobs:
+      - build
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
